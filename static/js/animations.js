@@ -6,15 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("page-loaded");
     });
 
-    document.querySelectorAll(".stagger-grid, [data-stagger-container]").forEach(container => {
-        container.querySelectorAll(".reveal, .reveal-up, .reveal-scale, .stagger-item, .vth-fleet-card, .service-card-item, .destination-card, .place-card-ref, .col-lg-4, .col-md-6, .col-lg-3, .col-lg-2").forEach((el, idx) => {
-            if (!el.classList.contains("stagger-item") && !el.classList.contains("reveal")) {
-                el.classList.add("stagger-item");
-            }
-            el.style.transitionDelay = (idx % 6 * 100) + "ms";
-        });
-    });
-
     const selector = ".reveal, .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .stagger-item, .dest-card-ref, .place-card-ref, [data-reveal]";
     const revealEls = document.querySelectorAll(selector);
 
@@ -22,19 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const target = entry.target;
-                    target.classList.add("active", "is-visible");
-                    target.querySelectorAll(selector).forEach((child, i) => {
-                        setTimeout(() => {
-                            child.classList.add("active", "is-visible");
-                        }, 50 * i);
-                    });
-                    obs.unobserve(target);
+                    entry.target.classList.add("active", "is-visible");
+                    obs.unobserve(entry.target);
                 }
             });
         }, {
             root: null,
-            rootMargin: "50px 0px 50px 0px",
+            rootMargin: "80px 0px",
             threshold: 0.05
         });
 

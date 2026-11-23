@@ -176,11 +176,9 @@
     {% block preload %}{% endblock %}
 
     <!-- ==========================================
-        CORE CRITICAL CSS (Reboot + Grid - Ultra Lightweight)
+        CORE CRITICAL CSS (Inlined for 0 Render-Blocking Requests)
     =========================================== -->
-    <link href="{% static 'vendor/bootstrap/5.3.7/bootstrap-core.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style-min.css' %}?v={{ STATIC_VERSION }}">
-    <link rel="stylesheet" href="{% static 'css/header/header.css' %}?v=light_theme_2">
+    {% include 'includes/critical_css.html' %}
 
     <!-- ==========================================
         DEFERRED SECONDARY CSS (Non-blocking)
