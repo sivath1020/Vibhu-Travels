@@ -176,15 +176,17 @@
     {% block preload %}{% endblock %}
 
     <!-- ==========================================
-        CORE CRITICAL CSS (Synchronous)
+        CORE CRITICAL CSS (Reboot + Grid - Ultra Lightweight)
     =========================================== -->
-    <link href="{% static 'vendor/bootstrap/5.3.7/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/5.3.7/bootstrap-core.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style-min.css' %}?v={{ STATIC_VERSION }}">
     <link rel="stylesheet" href="{% static 'css/header/header.css' %}?v=light_theme_2">
 
     <!-- ==========================================
         DEFERRED SECONDARY CSS (Non-blocking)
     =========================================== -->
+    <link rel="preload" as="style" href="{% static 'vendor/bootstrap/5.3.7/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/5.3.7/bootstrap.min.css' %}" media="print" onload="this.media='all'">
     <link rel="preload" as="style" href="{% static 'vendor/bootstrap-icons/1.13.1/bootstrap-icons.min.css' %}?v={{ STATIC_VERSION }}">
     <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/1.13.1/bootstrap-icons.min.css' %}?v={{ STATIC_VERSION }}" media="print" onload="this.media='all'">
 
@@ -317,15 +319,34 @@
 
     {% block schema_extra %}{% endblock %}
 
-<!-- Google tag (gtag.js) -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWMXS7EQCR"></script>
+<!-- Google tag (gtag.js) - Deferred to Idle / Interaction -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YWMXS7EQCR');
+
+  // Defer loading heavy GTM script until user interaction or idle
+  function loadGTM() {
+    if (window._gtmLoaded) return;
+    window._gtmLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YWMXS7EQCR';
+    document.head.appendChild(s);
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function() {
+      setTimeout(loadGTM, 2500);
+    });
+  } else {
+    setTimeout(loadGTM, 3500);
+  }
+
+  ['scroll', 'touchstart', 'mousemove', 'click'].forEach(function(ev) {
+    window.addEventListener(ev, loadGTM, { once: true, passive: true });
+  });
 </script>
 </head>
 
