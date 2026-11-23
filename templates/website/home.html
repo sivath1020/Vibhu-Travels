@@ -62,7 +62,9 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
 
 {% block preload %}
 <link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-640w-20260926.webp' %}" media="(max-width: 767px)" fetchpriority="high">
-<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-20260926.webp' %}" media="(min-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-960w-20260926.webp' %}" media="(min-width: 768px) and (max-width: 1024px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %}" media="(min-width: 1025px) and (max-width: 1440px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-20260926.webp' %}" media="(min-width: 1441px)" fetchpriority="high">
 {% endblock %}
 
 {% block extra_css %}
@@ -433,10 +435,11 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
     class="vth-hero-section position-relative overflow-hidden d-flex flex-column justify-content-between py-4 py-lg-5">
     <!-- Responsive Hero Image Backdrop Layer -->
     <img
-        src="{% static 'images/home-optimized/travel-hero-20260926.webp' %}"
+        src="{% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %}"
         srcset="{% static 'images/home-optimized/travel-hero-640w-20260926.webp' %} 640w,
                 {% static 'images/home-optimized/travel-hero-960w-20260926.webp' %} 960w,
-                {% static 'images/home-optimized/travel-hero-20260926.webp' %} 1280w"
+                {% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %} 1360w,
+                {% static 'images/home-optimized/travel-hero-20260926.webp' %} 1672w"
         sizes="100vw"
         width="1672"
         height="941"
