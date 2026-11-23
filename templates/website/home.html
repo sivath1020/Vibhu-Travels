@@ -61,7 +61,8 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
 {% block body_class %}home-page{% endblock %}
 
 {% block preload %}
-<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-640w-20260926.webp' %}" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-480w-20260926.webp' %}" media="(max-width: 575px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-720w-20260926.webp' %}" media="(min-width: 576px) and (max-width: 767px)" fetchpriority="high">
 <link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-960w-20260926.webp' %}" media="(min-width: 768px) and (max-width: 1024px)" fetchpriority="high">
 <link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %}" media="(min-width: 1025px) and (max-width: 1440px)" fetchpriority="high">
 <link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-20260926.webp' %}" media="(min-width: 1441px)" fetchpriority="high">
@@ -435,8 +436,9 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
     class="vth-hero-section position-relative overflow-hidden d-flex flex-column justify-content-between py-4 py-lg-5">
     <!-- Responsive Hero Image Backdrop Layer -->
     <img
-        src="{% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %}"
-        srcset="{% static 'images/home-optimized/travel-hero-640w-20260926.webp' %} 640w,
+        src="{% static 'images/home-optimized/travel-hero-720w-20260926.webp' %}"
+        srcset="{% static 'images/home-optimized/travel-hero-480w-20260926.webp' %} 480w,
+                {% static 'images/home-optimized/travel-hero-720w-20260926.webp' %} 720w,
                 {% static 'images/home-optimized/travel-hero-960w-20260926.webp' %} 960w,
                 {% static 'images/home-optimized/travel-hero-1360w-20260926.webp' %} 1360w,
                 {% static 'images/home-optimized/travel-hero-20260926.webp' %} 1672w"

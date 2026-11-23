@@ -81,39 +81,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const counterEls = document.querySelectorAll(".stat-number, .counter-value, .counter-number");
     if (counterEls.length > 0 && "IntersectionObserver" in window && !isReducedMotion) {
+        // Read all targets upfront to prevent interleaved reads/writes (forced reflow)
+        const countersData = [];
+        counterEls.forEach(el => {
+            let target = el.getAttribute("data-target");
+            let currentText = el.textContent.trim();
+            if (!target && currentText) {
+                const m = currentText.replace(/,/g, "").match(/(\d+)/);
+                if (m) target = m[1];
+            }
+            if (target) {
+                countersData.push({
+                    el: el,
+                    targetNum: parseInt(target, 10),
+                    hasPlus: currentText.includes("+") ? "+" : ""
+                });
+            }
+        });
+
         const counterObs = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const el = entry.target;
-                    let target = el.getAttribute("data-target");
-                    let currentText = el.innerText.trim();
-                    if (!target && currentText) {
-                        const m = currentText.replace(/,/g, "").match(/(\d+)/);
-                        if (m) target = m[1];
-                    }
-                    if (target) {
-                        const targetNum = parseInt(target, 10);
-                        const hasPlus = currentText.includes("+") || el.innerText.includes("+") ? "+" : "";
+                    const item = countersData.find(c => c.el === entry.target);
+                    if (item) {
+                        const { el, targetNum, hasPlus } = item;
                         const duration = 1200;
                         const startTime = performance.now();
                         const animateCount = now => {
                             const progress = Math.min((now - startTime) / duration, 1);
                             const ease = 1 - Math.pow(1 - progress, 2);
                             const currentVal = Math.floor(ease * targetNum);
-                            el.innerText = currentVal.toLocaleString() + hasPlus;
+                            el.textContent = currentVal.toLocaleString() + hasPlus;
                             if (progress < 1) {
                                 requestAnimationFrame(animateCount);
                             } else {
-                                el.innerText = targetNum.toLocaleString() + hasPlus;
+                                el.textContent = targetNum.toLocaleString() + hasPlus;
                             }
                         };
                         requestAnimationFrame(animateCount);
                     }
-                    obs.unobserve(el);
+                    obs.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });
 
-        counterEls.forEach(el => counterObs.observe(el));
+        countersData.forEach(item => counterObs.observe(item.el));
     }
 });
