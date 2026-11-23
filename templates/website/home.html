@@ -852,8 +852,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
 
                         <!-- Video or Image Player -->
                         {% if vehicle.get_video_url %}
-                        <video autoplay muted loop playsinline preload="none">
-                            <source src="{{ vehicle.get_video_url }}" type="video/mp4">
+                        <video muted loop playsinline preload="none" data-src="{{ vehicle.get_video_url }}">
                             {% if vehicle.image %}<img src="{{ vehicle.image.url }}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">{% endif %}
                         </video>
                         {% else %}
@@ -1831,5 +1830,31 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const lazyVideos = document.querySelectorAll("video[data-src]");
+    if (lazyVideos.length === 0) return;
+    if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const vid = entry.target;
+                    const src = vid.getAttribute("data-src");
+                    if (src && !vid.src) {
+                        vid.src = src;
+                        vid.load();
+                        vid.play().catch(function () {});
+                    }
+                    observer.unobserve(vid);
+                }
+            });
+        }, { rootMargin: "150px 0px" });
+        lazyVideos.forEach(function (vid) {
+            videoObserver.observe(vid);
+        });
+    }
+});
+</script>
 
 {% endblock %}
