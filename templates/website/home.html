@@ -254,6 +254,28 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
         }
     }
 
+    /* Disable all infinite/delay layout shifting animations on mobile */
+    @media (max-width: 991px) {
+        .vth-hero-section,
+        .vth-hero-bg-img,
+        .hero-label-anim,
+        .hero-heading-anim,
+        .hero-desc-anim,
+        .hero-buttons-anim,
+        .hero-card-anim-1,
+        .hero-card-anim-2,
+        .hero-card-anim-3,
+        .hero-card-anim-4,
+        .hero-mini-card,
+        .vth-hero-script,
+        .hero-main-title {
+            animation: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+            will-change: auto !important;
+        }
+    }
+
     .hero-label-anim,
     .hero-heading-anim,
     .hero-desc-anim,
