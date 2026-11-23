@@ -60,6 +60,11 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
 
 {% block body_class %}home-page{% endblock %}
 
+{% block preload %}
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-640w-20260926.webp' %}" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="{% static 'images/home-optimized/travel-hero-20260926.webp' %}" media="(min-width: 768px)" fetchpriority="high">
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home-3d.css' %}?v={{ STATIC_VERSION }}">
 <style>
@@ -397,6 +402,10 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 {% static 'images/home-optimized/travel-hero-960w-20260926.webp' %} 960w,
                 {% static 'images/home-optimized/travel-hero-20260926.webp' %} 1280w"
         sizes="100vw"
+        width="1672"
+        height="941"
+        fetchpriority="high"
+        decoding="async"
         alt="South India Travel Destinations"
         class="vth-hero-bg-img position-absolute top-0 start-0 w-100 h-100">
 
@@ -841,11 +850,10 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                         {% if vehicle.get_video_url %}
                         <video autoplay muted loop playsinline preload="metadata">
                             <source src="{{ vehicle.get_video_url }}" type="video/mp4">
-                            {% if vehicle.image %}<img src="{{ vehicle.image.url }}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub">{% endif %}
+                            {% if vehicle.image %}<img src="{{ vehicle.image.url }}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">{% endif %}
                         </video>
                         {% else %}
-                        <img src="{% if vehicle.image %}{{ vehicle.image.url }}{% else %}{% static 'images/vehicles/traveller.webp' %}{% endif %}"
-                            alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub">
+                        <img src="{% if vehicle.image %}{{ vehicle.image.url }}{% else %}{% static \'images/vehicles/traveller.webp\' %}{% endif %}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">
                         {% endif %}
                     </div>
 
@@ -943,7 +951,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                     <div class="destination-card">
                         <div class="destination-image-wrapper">
                             <img src="{% static 'images/home-optimized/tamil2.webp' %}" alt="Tamil Nadu"
-                                class="destination-image">
+                                class="destination-image" loading="lazy" width="380" height="260">
                         </div>
                         <div class="destination-content">
                             <div class="destination-label">
@@ -970,7 +978,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                     <div class="destination-card">
                         <div class="destination-image-wrapper">
                             <img src="{% static 'images/home-optimized/kerala2.webp' %}" alt="Kerala"
-                                class="destination-image">
+                                class="destination-image" loading="lazy" width="380" height="260">
                         </div>
                         <div class="destination-content">
                             <div class="destination-label">
@@ -997,7 +1005,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                     <div class="destination-card">
                         <div class="destination-image-wrapper">
                             <img src="{% static 'images/home-optimized/karnataka2.webp' %}" alt="Karnataka"
-                                class="destination-image">
+                                class="destination-image" loading="lazy" width="380" height="260">
                         </div>
                         <div class="destination-content">
                             <div class="destination-label">
@@ -1045,7 +1053,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/cab-service-hero.webp' %}" alt="Local Cab Service"
+                        <img src="{% static 'images/home-optimized/cab-service-hero.webp' %}" alt="Local Cab Service" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1076,7 +1084,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                             srcset="{% static 'images/home-optimized/outstation-hero-180w.webp' %} 180w,
                                     {% static 'images/home-optimized/outstation-hero.webp' %} 198w"
                             sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 420px"
-                            alt="Outstation Tours"
+                            alt="Outstation Tours" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1103,7 +1111,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/tempo-hero.webp' %}" alt="Tempo Traveller"
+                        <img src="{% static 'images/home-optimized/tempo-hero.webp' %}" alt="Tempo Traveller" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1129,7 +1137,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/bus-hero.webp' %}" alt="Bus Rental"
+                        <img src="{% static 'images/home-optimized/bus-hero.webp' %}" alt="Bus Rental" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1155,7 +1163,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/pilgrimage-hero.webp' %}" alt="Pilgrimage Trips"
+                        <img src="{% static 'images/home-optimized/pilgrimage-hero.webp' %}" alt="Pilgrimage Trips" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1187,7 +1195,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                             srcset="{% static 'images/home-optimized/corporate-hero-300w.webp' %} 300w,
                                     {% static 'images/home-optimized/corporate-hero.webp' %} 420w"
                             sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 420px"
-                            alt="Corporate Travel"
+                            alt="Corporate Travel" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1240,7 +1248,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                                 src="{% static 'images/home-optimized/coorg.webp' %}"
                                 srcset="{% static 'images/home-optimized/coorg.webp' %} 151w"
                                 sizes="(max-width: 575px) 50vw, (max-width: 991px) 25vw, 151px"
-                                alt="Coorg"
+                                alt="Coorg" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100"
                                 style="height: 140px; object-fit: cover;">
                         </div>
@@ -1257,7 +1265,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <a href="{% url 'kerala_view' %}" class="place-card-link">
                     <div class="place-card-ref rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm">
                         <div class="img-reveal">
-                            <img src="{% static 'images/home-optimized/munnar.webp' %}" alt="Munnar"
+                            <img src="{% static 'images/home-optimized/munnar.webp' %}" alt="Munnar" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100" style="height: 140px; object-fit: cover;">
                         </div>
                         <div class="p-3">
@@ -1273,7 +1281,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <a href="{% url 'karnataka_view' %}" class="place-card-link">
                     <div class="place-card-ref rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm">
                         <div class="img-reveal">
-                            <img src="{% static 'images/home-optimized/mysore.webp' %}" alt="Mysore Palace"
+                            <img src="{% static 'images/home-optimized/mysore.webp' %}" alt="Mysore Palace" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100" style="height: 140px; object-fit: cover;">
                         </div>
                         <div class="p-3">
@@ -1289,7 +1297,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <a href="{% url 'tamil_nadu_view' %}" class="place-card-link">
                     <div class="place-card-ref rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm">
                         <div class="img-reveal">
-                            <img src="{% static 'images/home-optimized/ooty.webp' %}" alt="Ooty"
+                            <img src="{% static 'images/home-optimized/ooty.webp' %}" alt="Ooty" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100" style="height: 140px; object-fit: cover;">
                         </div>
                         <div class="p-3">
@@ -1310,7 +1318,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                                 srcset="{% static 'images/home-optimized/alapuzha-180w.webp' %} 180w,
                                         {% static 'images/home-optimized/alapuzha-320w.webp' %} 320w"
                                 sizes="(max-width: 575px) 50vw, (max-width: 991px) 25vw, 176px"
-                                alt="Alleppey"
+                                alt="Alleppey" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100"
                                 style="height: 140px; object-fit: cover;">
                         </div>
@@ -1327,7 +1335,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                 <a href="{% url 'karnataka_view' %}" class="place-card-link">
                     <div class="place-card-ref rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm">
                         <div class="img-reveal">
-                            <img src="{% static 'images/home-optimized/Hampis.webp' %}" alt="Hampi"
+                            <img src="{% static 'images/home-optimized/Hampis.webp' %}" alt="Hampi" loading="lazy" width="320" height="140"
                                 class="place-card-img img-fluid w-100" style="height: 140px; object-fit: cover;">
                         </div>
                         <div class="p-3">
