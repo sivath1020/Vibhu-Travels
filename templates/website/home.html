@@ -853,7 +853,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                             {% if vehicle.image %}<img src="{{ vehicle.image.url }}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">{% endif %}
                         </video>
                         {% else %}
-                        <img src="{% if vehicle.image %}{{ vehicle.image.url }}{% else %}{% static \'images/vehicles/traveller.webp\' %}{% endif %}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">
+                        <img src="{% if vehicle.image %}{{ vehicle.image.url }}{% else %}{% static 'images/vehicles/traveller.webp' %}{% endif %}" alt="{{ vehicle.name }} Rental in Coimbatore - Vibhu Travel Hub" loading="lazy" width="400" height="220">
                         {% endif %}
                     </div>
 
