@@ -66,7 +66,11 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
 {% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/home-3d.css' %}?v={{ STATIC_VERSION }}">
+<link rel="preload" as="style" href="{% static 'css/home-3d.css' %}?v={{ STATIC_VERSION }}">
+<link rel="stylesheet" href="{% static 'css/home-3d.css' %}?v={{ STATIC_VERSION }}" media="print" onload="this.media='all'">
+<noscript>
+    <link rel="stylesheet" href="{% static 'css/home-3d.css' %}?v={{ STATIC_VERSION }}">
+</noscript>
 <style>
     .vth-hero-script {
         font-family: 'Caveat', cursive, sans-serif;
@@ -1723,8 +1727,7 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
                     <!-- Left Column: Image & Badges -->
                     <div class="col-md-5 text-center">
                         <div class="p-3 bg-white rounded-4 border shadow-sm mb-3">
-                            <img id="vModalImage" src="" alt="Vehicle" class="img-fluid rounded"
-                                style="max-height: 180px; object-fit: contain;">
+                            <img id="vModalImage" src="{% static 'images/vehicles/traveller.webp' %}" width="320" height="180" alt="Vehicle" class="img-fluid rounded" loading="lazy" style="max-height: 180px; object-fit: contain;">
                         </div>
                         <div class="d-flex justify-content-center gap-2 flex-wrap">
                             <span id="vModalCapacityBadge" class="badge bg-danger rounded-pill px-3 py-2">Standard</span>
