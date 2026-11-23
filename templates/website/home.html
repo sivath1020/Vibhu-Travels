@@ -254,44 +254,54 @@ customized travel services across Tamil Nadu, Kerala and Karnataka.{% endblock %
         }
     }
 
-    .hero-label-anim {
-        opacity: 0;
-        animation: heroLabelEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
-    }
-
-    .hero-heading-anim {
-        opacity: 0;
-        animation: heroHeadingEntrance 800ms cubic-bezier(0.22, 1, 0.36, 1) 200ms forwards;
-    }
-
-    .hero-desc-anim {
-        opacity: 0;
-        animation: heroDescEntrance 650ms cubic-bezier(0.22, 1, 0.36, 1) 450ms forwards;
-    }
-
-    .hero-buttons-anim {
-        opacity: 0;
-        animation: heroBtnEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 650ms forwards;
-    }
-
-    .hero-card-anim-1 {
-        opacity: 0;
-        animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 850ms forwards;
-    }
-
-    .hero-card-anim-2 {
-        opacity: 0;
-        animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 950ms forwards;
-    }
-
-    .hero-card-anim-3 {
-        opacity: 0;
-        animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 1050ms forwards;
-    }
-
+    .hero-label-anim,
+    .hero-heading-anim,
+    .hero-desc-anim,
+    .hero-buttons-anim,
+    .hero-card-anim-1,
+    .hero-card-anim-2,
+    .hero-card-anim-3,
     .hero-card-anim-4 {
-        opacity: 0;
-        animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 1150ms forwards;
+        opacity: 1;
+        will-change: transform;
+    }
+
+    @media (min-width: 992px) {
+        .vth-hero-section {
+            animation: heroBgEntrance 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-label-anim {
+            opacity: 0;
+            animation: heroLabelEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
+        }
+        .hero-heading-anim {
+            opacity: 0;
+            animation: heroHeadingEntrance 800ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+        }
+        .hero-desc-anim {
+            opacity: 0;
+            animation: heroDescEntrance 650ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+        }
+        .hero-buttons-anim {
+            opacity: 0;
+            animation: heroBtnEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 450ms forwards;
+        }
+        .hero-card-anim-1 {
+            opacity: 0;
+            animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 550ms forwards;
+        }
+        .hero-card-anim-2 {
+            opacity: 0;
+            animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 650ms forwards;
+        }
+        .hero-card-anim-3 {
+            opacity: 0;
+            animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 750ms forwards;
+        }
+        .hero-card-anim-4 {
+            opacity: 0;
+            animation: heroCardEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) 850ms forwards;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
