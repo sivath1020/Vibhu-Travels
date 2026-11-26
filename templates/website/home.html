@@ -200,7 +200,7 @@
     }
 
     .vth-hero-section {
-        min-height: calc(100vh - 90px);
+        min-height: calc(100vh - 80px);
         animation: heroBgEntrance 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
@@ -220,7 +220,7 @@
 
     @media (max-width: 1199px) {
         .vth-hero-section {
-            min-height: calc(100vh - 90px);
+            min-height: calc(100vh - 80px);
         }
 
         .vth-hero-bg-img {
@@ -230,7 +230,7 @@
 
     @media (max-width: 991px) {
         .vth-hero-section {
-            min-height: calc(100vh - 60px);
+            min-height: calc(100vh - 56px);
         }
 
         .vth-hero-bg-img {
@@ -240,7 +240,7 @@
 
     @media (max-width: 767px) {
         .vth-hero-section {
-            min-height: calc(100vh - 60px);
+            min-height: calc(100vh - 56px);
         }
 
         .vth-hero-bg-img {
@@ -566,19 +566,7 @@
                         class="img-fluid w-100"
                         width="800"
                         height="600"
-                        style="object-fit: cover; min-height: 320px;">
                         style="object-fit: cover; height: 460px !important; min-height: 460px;">
-                    <div
-                        class="position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-3 shadow-sm border d-flex align-items-center gap-3">
-                        <div class="bg-danger text-white rounded-circle p-2.5 d-flex align-items-center justify-content-center"
-                            style="width: 44px; height: 44px; background-color: #E31E24 !important;">
-                            <i class="bi bi-star-fill fs-5"></i>
-                        </div>
-                        <div>
-                            <a href="https://www.google.com/maps?cid=14324951939692649163" class="fw-bold text-dark">Read our Google reviews</a>
-                            <span class="text-muted small d-block">Vibhu Travel Hub, Coimbatore</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5 reveal-right">
@@ -588,18 +576,11 @@
                 <h2 class="fw-extrabold text-dark mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">
                     Tours and Travels from Coimbatore
                 </h2>
-                <p class="text-muted mb-3" style="line-height: 1.7; font-size: 0.98rem;">
-                    Vibhu Travel Hub is a travel company in Coimbatore serving families, groups, and businesses.
-                    Book an <a href="{% url 'outstation_cab_coimbatore' %}">outstation cab</a> for a trip across Tamil Nadu,
-                    Kerala, or Karnataka, or arrange an <a href="{% url 'airport_transfer' %}">airport transfer</a>
-                    to or from Coimbatore International Airport. For larger groups, we offer
-                    <a href="{% url 'tempo_traveller_rental_coimbatore' %}">tempo traveller rentals</a> and
-                    <a href="{% url 'bus_rental_coimbatore' %}">bus rentals</a> with drivers.
-                </p>
                 <p class="text-muted mb-4" style="line-height: 1.7; font-size: 0.98rem;">
-                    Planning a holiday? See our <a href="{% url 'coimbatore_to_ooty_tour' %}">Coimbatore to Ooty tour package</a>.
-                    To request a quote, share your pickup point, destination, travel dates, and passenger count
-                    through our <a href="{% url 'book_cab' %}">booking form</a>.
+                    Vibhu Travel Hub offers reliable <a href="{% url 'outstation_cab_coimbatore' %}">outstation cabs</a>,
+                    <a href="{% url 'airport_transfer' %}">airport transfers</a>, <a href="{% url 'tempo_traveller_rental_coimbatore' %}">tempo travellers</a>,
+                    and <a href="{% url 'bus_rental_coimbatore' %}">bus rentals</a> across Tamil Nadu, Kerala, and Karnataka —
+                    tailored for family holidays, <a href="{% url 'coimbatore_to_ooty_tour' %}">Ooty tours</a>, and group trips.
                 </p>
                 <div class="row g-3 mb-4">
                     <div class="col-6">
@@ -1026,129 +1007,36 @@
 </section>
 
 <!-- ==========================================
-    SECTION 4 — DESTINATION SECTION
-========================================== -->
-<section id="destinations" class="vth-section py-5 bg-white">
-    <div class="container">
-        <div class="text-center mx-auto mb-3 reveal-down" style="max-width: 850px;">
-            <span class="vth-eyebrow text-danger fw-bold text-uppercase d-block mb-1"
-                style="color: #E31E24; font-size: 0.75rem; letter-spacing: 1.2px;">EXPLORE SOUTH INDIA</span>
-            <h2 class="fw-extrabold text-dark mb-3" style="font-size: 2.3rem; letter-spacing: -0.5px;">Top Destinations</h2>
-            <p class="text-muted mb-0">
-                As a trusted Coimbatore travel agency, Vibhu Travel Hub provides
-                customized travel services for family trips, group tours, corporate
-                travel, pilgrimage journeys and outstation holidays. Choose from
-                South India tour packages from Coimbatore with comfortable cabs,
-                Tempo Travellers and buses.
-            </p>
-        </div>
-
-        <div class="d-flex justify-content-end mb-3 reveal-right">
-            <a href="{% url 'tamil_nadu_view' %}" class="text-decoration-none text-dark fw-bold small">View All
-                Destinations <i class="bi bi-chevron-right ms-1"></i></a>
-        </div>
-
-        <div class="row g-4">
-            <!-- Tamil Nadu -->
-            <div class="col-lg-4 col-md-6 reveal-left">
-                <a href="{% url 'tamil_nadu_view' %}" class="destination-card-link">
-                    <div class="destination-card">
-                        <div class="destination-image-wrapper">
-                            <img src="{% static 'images/destinations/tamil2.webp' %}" alt="Tamil Nadu"
-                                class="destination-image" loading="lazy" width="380" height="260">
-                        </div>
-                        <div class="destination-content">
-                            <div class="destination-label">
-                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
-                            </div>
-                            <h3 class="destination-title">Tamil Nadu Tour Packages from Coimbatore</h3>
-                            <p class="destination-subtitle">Temples, Beaches &amp; Heritage Cities</p>
-                            <div class="destination-divider"></div>
-                            <p class="destination-description">
-                                Plan Tamil Nadu tour packages from Coimbatore and explore the rich cultural heritage,
-                                magnificent temples, pristine beaches and vibrant cities across the state.
-                            </p>
-                            <span class="destination-button">
-                                View Packages <i class="bi bi-arrow-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Kerala -->
-            <div class="col-lg-4 col-md-6 reveal-up">
-                <a href="{% url 'kerala_view' %}" class="destination-card-link">
-                    <div class="destination-card">
-                        <div class="destination-image-wrapper">
-                            <img src="{% static 'images/destinations/kerala2.webp' %}" alt="Kerala"
-                                class="destination-image" loading="lazy" width="380" height="260">
-                        </div>
-                        <div class="destination-content">
-                            <div class="destination-label">
-                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
-                            </div>
-                            <h3 class="destination-title">Kerala Tour Packages from Coimbatore</h3>
-                            <p class="destination-subtitle">Backwaters, Beaches &amp; Nature</p>
-                            <div class="destination-divider"></div>
-                            <p class="destination-description">
-                                Book Kerala tour packages from Coimbatore and discover tranquil backwaters, lush green tea
-                                plantations, palm-fringed beaches and serene hill stations across Kerala.
-                            </p>
-                            <span class="destination-button">
-                                View Packages <i class="bi bi-arrow-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Karnataka -->
-            <div class="col-lg-4 col-md-6 reveal-right">
-                <a href="{% url 'karnataka_view' %}" class="destination-card-link">
-                    <div class="destination-card">
-                        <div class="destination-image-wrapper">
-                            <img src="{% static 'images/destinations/karnataka2.webp' %}" alt="Karnataka"
-                                class="destination-image" loading="lazy" width="380" height="260">
-                        </div>
-                        <div class="destination-content">
-                            <div class="destination-label">
-                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
-                            </div>
-                            <h3 class="destination-title">Karnataka Tour Packages from Coimbatore</h3>
-                            <p class="destination-subtitle">Hill Stations, Heritage &amp; Modern Cities</p>
-                            <div class="destination-divider"></div>
-                            <p class="destination-description">
-                                Explore Karnataka tour packages from Coimbatore and experience historic palaces, royal
-                                heritage sites, misty coffee estates, waterfalls and vibrant cities across the state.
-                            </p>
-                            <span class="destination-button">
-                                View Packages <i class="bi bi-arrow-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================
     SECTION 5 — SERVICE SECTION
 ========================================== -->
 <section id="services" class="vth-section py-5 style-services-section" style="background-color: #F8FAFC;">
+    <style>
+        #services .service-card-item .btn-outline-danger {
+            background-color: #E31E24 !important;
+            color: #FFFFFF !important;
+            border-radius: 0 !important;
+            width: 100%;
+            justify-content: space-between;
+            padding: 12px 18px !important;
+            font-weight: 700;
+            transition: background-color 0.25s ease, transform 0.2s ease;
+        }
+        #services .service-card-item .btn-outline-danger:hover {
+            background-color: #B91C1C !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
+        }
+    </style>
     <div class="container">
-        <div class="d-flex align-items-end justify-content-between mb-4">
-            <div class="reveal-left">
-                <span class="vth-eyebrow text-danger fw-bold text-uppercase d-block reveal-down"
-                    style="color: #E31E24; font-size: 0.75rem; letter-spacing: 1.2px;">TAILORED TRAVEL SOLUTIONS</span>
-                <h2 class="fw-extrabold text-dark mb-0" style="font-size: 2.3rem; letter-spacing: -0.5px;">Explore Our
-                    Services</h2>
-            </div>
-            <div class="d-flex align-items-center gap-3 reveal-right">
-                <a href="{% url 'book_cab' %}" class="text-decoration-none text-dark fw-bold small">Compare booking options
-                    <i class="bi bi-chevron-right ms-1"></i></a>
-            </div>
+        <div class="text-center mx-auto mb-3 reveal-down">
+            <span class="vth-eyebrow text-danger fw-bold text-uppercase d-block mb-1"
+                style="color: #E31E24; font-size: 0.75rem; letter-spacing: 1.2px;">TAILORED TRAVEL SOLUTIONS</span>
+            <h2 class="fw-extrabold text-dark mb-0" style="font-size: 2.3rem; letter-spacing: -0.5px;">Explore Our
+                Services</h2>
+        </div>
+        <div class="d-flex justify-content-end mb-3 reveal-right">
+            <a href="{% url 'book_cab' %}" class="text-decoration-none text-dark fw-bold small">Compare booking options
+                <i class="bi bi-chevron-right ms-1"></i></a>
         </div>
 
         <div class="row g-4">
@@ -1157,7 +1045,7 @@
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/cab-service-hero.webp' %}" alt="Local Cab Service" loading="lazy" width="420" height="260"
+                        <img src="{% static 'images/services/local-taxi-hero.webp' %}" alt="Local Cab Service" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1212,7 +1100,7 @@
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/tempo-hero.webp' %}" alt="Tempo Traveller" loading="lazy" width="420" height="260"
+                        <img src="{% static 'images/services/tempo-hero.webp' %}" alt="Tempo Traveller" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1238,7 +1126,7 @@
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/bus-hero.webp' %}" alt="Bus Rental" loading="lazy" width="420" height="260"
+                        <img src="{% static 'images/services/bus-hero.webp' %}" alt="Bus Rental" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1264,7 +1152,7 @@
                 <div
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{% static 'images/home-optimized/pilgrimage-hero.webp' %}" alt="Pilgrimage Trips" loading="lazy" width="420" height="260"
+                        <img src="{% static 'images/services/pilgrimage-hero.webp' %}" alt="Pilgrimage Trips" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
                         <span
@@ -1292,10 +1180,7 @@
                     class="service-card-item rounded-4 bg-white overflow-hidden border border-light-subtle shadow-sm h-100 d-flex flex-column">
                     <div class="service-card-img-wrapper position-relative overflow-hidden" style="height: 200px;">
                         <img
-                            src="{% static 'images/home-optimized/corporate-hero.webp' %}"
-                            srcset="{% static 'images/home-optimized/corporate-hero-300w.webp' %} 300w,
-                                    {% static 'images/home-optimized/corporate-hero.webp' %} 420w"
-                            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 420px"
+                            src="{% static 'images/services/corporate-hero.webp' %}"
                             alt="Corporate Travel" loading="lazy" width="420" height="260"
                             class="service-card-img w-100 h-100"
                             style="object-fit: cover; transition: transform 0.5s ease;">
@@ -1553,6 +1438,114 @@
                         <div class="p-3">
                             <h3 class="fw-bold text-dark mb-0" style="font-size: 0.95rem;">Hampi</h3>
                             <span class="text-muted small">Karnataka</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+    SECTION 4 — DESTINATION SECTION
+========================================== -->
+<section id="destinations" class="vth-section py-5 bg-white">
+    <div class="container">
+        <div class="text-center mx-auto mb-3 reveal-down" style="max-width: 850px;">
+            <span class="vth-eyebrow text-danger fw-bold text-uppercase d-block mb-1"
+                style="color: #E31E24; font-size: 0.75rem; letter-spacing: 1.2px;">EXPLORE SOUTH INDIA</span>
+            <h2 class="fw-extrabold text-dark mb-3" style="font-size: 2.3rem; letter-spacing: -0.5px;">Top Destinations</h2>
+            <p class="text-muted mb-0">
+                As a trusted Coimbatore travel agency, Vibhu Travel Hub provides
+                customized travel services for family trips, group tours, corporate
+                travel, pilgrimage journeys and outstation holidays. Choose from
+                South India tour packages from Coimbatore with comfortable cabs,
+                Tempo Travellers and buses.
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-end mb-3 reveal-right">
+            <a href="{% url 'tamil_nadu_view' %}" class="text-decoration-none text-dark fw-bold small">View All
+                Destinations <i class="bi bi-chevron-right ms-1"></i></a>
+        </div>
+
+        <div class="row g-4">
+            <!-- Tamil Nadu -->
+            <div class="col-lg-4 col-md-6 reveal-left">
+                <a href="{% url 'tamil_nadu_view' %}" class="destination-card-link">
+                    <div class="destination-card">
+                        <div class="destination-image-wrapper">
+                            <img src="{% static 'images/destinations/tamil2.webp' %}" alt="Tamil Nadu"
+                                class="destination-image" loading="lazy" width="380" height="260">
+                        </div>
+                        <div class="destination-content">
+                            <div class="destination-label">
+                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
+                            </div>
+                            <h3 class="destination-title">Tamil Nadu Tour Packages from Coimbatore</h3>
+                            <p class="destination-subtitle">Temples, Beaches &amp; Heritage Cities</p>
+                            <div class="destination-divider"></div>
+                            <p class="destination-description">
+                                Plan Tamil Nadu tour packages from Coimbatore and explore the rich cultural heritage,
+                                magnificent temples, pristine beaches and vibrant cities across the state.
+                            </p>
+                            <span class="destination-button">
+                                View Packages <i class="bi bi-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Kerala -->
+            <div class="col-lg-4 col-md-6 reveal-up">
+                <a href="{% url 'kerala_view' %}" class="destination-card-link">
+                    <div class="destination-card">
+                        <div class="destination-image-wrapper">
+                            <img src="{% static 'images/destinations/kerala2.webp' %}" alt="Kerala"
+                                class="destination-image" loading="lazy" width="380" height="260">
+                        </div>
+                        <div class="destination-content">
+                            <div class="destination-label">
+                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
+                            </div>
+                            <h3 class="destination-title">Kerala Tour Packages from Coimbatore</h3>
+                            <p class="destination-subtitle">Backwaters, Beaches &amp; Nature</p>
+                            <div class="destination-divider"></div>
+                            <p class="destination-description">
+                                Book Kerala tour packages from Coimbatore and discover tranquil backwaters, lush green tea
+                                plantations, palm-fringed beaches and serene hill stations across Kerala.
+                            </p>
+                            <span class="destination-button">
+                                View Packages <i class="bi bi-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Karnataka -->
+            <div class="col-lg-4 col-md-6 reveal-right">
+                <a href="{% url 'karnataka_view' %}" class="destination-card-link">
+                    <div class="destination-card">
+                        <div class="destination-image-wrapper">
+                            <img src="{% static 'images/destinations/karnataka2.webp' %}" alt="Karnataka"
+                                class="destination-image" loading="lazy" width="380" height="260">
+                        </div>
+                        <div class="destination-content">
+                            <div class="destination-label">
+                                <i class="bi bi-geo-alt-fill"></i> VIBHU TRAVEL HUB
+                            </div>
+                            <h3 class="destination-title">Karnataka Tour Packages from Coimbatore</h3>
+                            <p class="destination-subtitle">Hill Stations, Heritage &amp; Modern Cities</p>
+                            <div class="destination-divider"></div>
+                            <p class="destination-description">
+                                Explore Karnataka tour packages from Coimbatore and experience historic palaces, royal
+                                heritage sites, misty coffee estates, waterfalls and vibrant cities across the state.
+                            </p>
+                            <span class="destination-button">
+                                View Packages <i class="bi bi-arrow-right"></i>
+                            </span>
                         </div>
                     </div>
                 </a>

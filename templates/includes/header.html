@@ -111,16 +111,16 @@
             width: 100% !important;
             z-index: 1030 !important;
         }
-        main {
-            padding-top: 60px;
+        body {
+            padding-top: 56px !important;
         }
         @media (min-width: 992px) {
-            main {
-                padding-top: 90px;
+            body {
+                padding-top: 80px !important;
             }
         }
         .vth-navbar {
-            padding: 4px 0 !important;
+            padding: 0 !important;
         }
         .vth-topbar {
             max-height: 42px;
@@ -134,18 +134,47 @@
             pointer-events: none;
         }
         .nav-phone-banner-img {
-            width: 205px !important;
+            width: 150px !important;
             height: auto !important;
-            max-width: none !important;
-            max-height: 46px !important;
+            max-width: 100% !important;
+            max-height: 38px !important;
             object-fit: contain;
             display: block;
         }
         .vth-topbar .topbar-link {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
+        }
+        .vth-navbar .navbar-brand {
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+            padding: 6px 0;
         }
         .vth-navbar .dropdown-toggle::after {
             display: none !important;
+        }
+        .vth-navbar .vth-nav-link {
+            border-radius: 0 !important;
+            padding: 15px 10px !important;
+            font-size: 0.88rem !important;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease !important;
+        }
+        .vth-navbar .vth-nav-link::after {
+            display: none !important;
+        }
+        .vth-navbar .vth-nav-link:hover,
+        .vth-navbar .vth-nav-link:focus,
+        .vth-navbar .vth-nav-link.show {
+            background-color: rgba(227, 30, 36, 0.08) !important;
+            color: #E31E24 !important;
+            box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.22);
+        }
+        .vth-navbar .vth-nav-link.active {
+            background-color: #E31E24 !important;
+            color: #FFFFFF !important;
+            box-shadow: none;
         }
     </style>
     <div class="vth-topbar d-none d-lg-block">
@@ -180,10 +209,10 @@
 
             <!-- LEFT: Logo & Subtitle -->
             <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
-                <img src="{% static 'images/logo/logo.webp' %}?v={{ STATIC_VERSION }}" alt="Vibhu Travel Hub" class="brand-logo" width="192" height="192" style="height: 38px; width: auto;">
+                <img src="{% static 'images/logo/logo.webp' %}?v={{ STATIC_VERSION }}" alt="Vibhu Travel Hub" class="brand-logo" width="192" height="192" style="height: 34px; width: auto;">
                 <div class="brand-text">
-                    <span class="brand-title fw-extrabold text-dark d-block lh-1" style="font-size: 1.25rem; letter-spacing: -0.5px;">VIBHU TRAVEL HUB</span>
-                    <span class="brand-tagline text-danger fw-bold d-block text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">PREMIUM TRAVEL SERVICES</span>
+                    <span class="brand-title fw-extrabold text-dark d-block lh-1" style="font-size: 1.05rem; letter-spacing: -0.4px;">VIBHU TRAVEL HUB</span>
+                    <span class="brand-tagline text-danger fw-bold d-block text-uppercase" style="font-size: 0.6rem; letter-spacing: 0.8px;">PREMIUM TRAVEL SERVICES</span>
                 </div>
             </a>
 
@@ -198,13 +227,13 @@
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link vth-nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                        <a id="navHomeLink" class="nav-link vth-nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link vth-nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link vth-nav-link" href="{% url 'home' %}#fleet">Fleet</a>
+                        <a id="navFleetLink" class="nav-link vth-nav-link" href="{% url 'home' %}#fleet">Fleet</a>
                     </li>
 
                     <!-- Destinations Dropdown -->
@@ -261,9 +290,9 @@
                         <a class="nav-link vth-nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
                     </li>
 
-                    <li class="nav-item ms-lg-3">
+                    <li class="nav-item ms-lg-2">
                         <a href="tel:+919655866660" class="nav-phone-banner-link" aria-label="Call +91 96558 66660">
-                            <img src="{% static 'images/phone-cta-cropped.png' %}" alt="+91 96558 66660" class="nav-phone-banner-img" width="205" height="45">
+                            <img src="{% static 'images/phone-cta-cropped.png' %}" alt="+91 96558 66660" class="nav-phone-banner-img" width="165" height="36">
                         </a>
                     </li>
 
@@ -275,3 +304,22 @@
         </div>
     </nav>
 </header>
+<script>
+    (function () {
+        function syncFleetActive() {
+            var homeLink = document.getElementById('navHomeLink');
+            var fleetLink = document.getElementById('navFleetLink');
+            if (!homeLink || !fleetLink) return;
+            var isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+            if (isHomePage && window.location.hash === '#fleet') {
+                homeLink.classList.remove('active');
+                fleetLink.classList.add('active');
+            } else if (isHomePage) {
+                fleetLink.classList.remove('active');
+                homeLink.classList.add('active');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', syncFleetActive);
+        window.addEventListener('hashchange', syncFleetActive);
+    })();
+</script>

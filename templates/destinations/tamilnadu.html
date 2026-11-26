@@ -110,20 +110,28 @@ Hub.{% endblock %}
         box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
     }
 
+    .cab-service-card .img-reveal img {
+        height: 200px !important;
+        width: 100% !important;
+        object-fit: cover;
+        display: block;
+    }
+
     .cab-icon-badge {
-        width: 46px;
-        height: 46px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         background: #FFFFFF;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
         color: #E31E24;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
-        margin-top: -23px;
-        margin-left: 20px;
-        position: relative;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: 12px;
+        left: 16px;
+        margin: 0;
         z-index: 3;
     }
 
@@ -189,7 +197,7 @@ Hub.{% endblock %}
 
     .gallery-tile img {
         width: 100%;
-        height: 100%;
+        height: 100% !important;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
@@ -247,7 +255,7 @@ Hub.{% endblock %}
         <div class="p-3.5 rounded-4 bg-white border border-light-subtle shadow-sm reveal-up">
             <div class="row g-3 text-start align-items-center">
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-shield-check text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Safe & Secure</h6>
@@ -257,7 +265,7 @@ Hub.{% endblock %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-person-check text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Professional Drivers</h6>
@@ -266,7 +274,7 @@ Hub.{% endblock %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-car-front text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Luxury Fleet</h6>
@@ -275,7 +283,7 @@ Hub.{% endblock %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-clock-history text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">24/7 Support</h6>
@@ -284,7 +292,7 @@ Hub.{% endblock %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-receipt text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Best Price</h6>
@@ -293,7 +301,7 @@ Hub.{% endblock %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-airplane text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Airport Transfer</h6>
@@ -331,14 +339,8 @@ Hub.{% endblock %}
                     Tamil Nadu is a captivating destination in South India where centuries of history, vibrant culture, magnificent temples and diverse landscapes come together to create unforgettable travel experiences.
                 </p>
                 <div class="about-text-content text-secondary small-text mb-4" style="font-size: 0.98rem; line-height: 1.75;">
-                    <p class="mb-3">
-                        Bordered by the Bay of Bengal and the Western Ghats, the state is world-famous for its thousand-year-old stone temples, palm-fringed coastlines, and cool mountain hill stations. From the coastal metropolis of <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='chennai' %}" class="text-danger text-decoration-none fw-bold">Chennai</a> to the industrial and spiritual hub of <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='coimbatore' %}" class="text-danger text-decoration-none fw-bold">Coimbatore</a>, Tamil Nadu travel offers a rich journey into living Dravidian traditions.
-                    </p>
-                    <p class="mb-3">
-                        The state's architectural grandeur shines in temple cities like <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='madurai' %}" class="text-danger text-decoration-none fw-bold">Madurai</a>, home to the iconic Meenakshi Amman Temple, and <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='trichy' %}" class="text-danger text-decoration-none fw-bold">Trichy</a> with its monolithic Rockfort. Beyond temples, travelers enjoy sacred Rameswaram, UNESCO shore monuments at Mahabalipuram, Thanjavur Big Temple, tri-sea sunsets at Kanyakumari, and misty tea hill stations like Ooty and Kodaikanal.
-                    </p>
                     <p class="mb-0">
-                        Planning Tamil Nadu tour packages from Coimbatore is easy with Vibhu Travel Hub. Choose from dedicated car rentals, outstation cabs, Tempo Travellers and bus rentals for family trips, group tours and journeys to popular destinations across Tamil Nadu.
+                        Explore <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='chennai' %}" class="text-danger text-decoration-none fw-bold">Chennai</a>, <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='coimbatore' %}" class="text-danger text-decoration-none fw-bold">Coimbatore</a>, <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='madurai' %}" class="text-danger text-decoration-none fw-bold">Madurai</a>, <a href="{% url 'city_detail' state_slug='tamil-nadu' city_slug='trichy' %}" class="text-danger text-decoration-none fw-bold">Trichy</a>, Ooty, Kodaikanal, Rameswaram, and Kanyakumari with Vibhu Travel Hub's outstation cabs, Tempo Travellers, and tour buses.
                     </p>
                 </div>
 
@@ -838,7 +840,7 @@ Hub.{% endblock %}
                 <h2 class="fw-extrabold text-dark mb-4" style="font-size: 2rem; letter-spacing: -0.5px;">Beautiful Tamil
                     Nadu</h2>
 
-                <div class="row g-2.5">
+                <div class="row g-3">
                     <div class="col-4">
                         <div class="gallery-tile">
                             <img src="{% static 'images/destinations/tn-gallery-1.webp' %}"
@@ -894,8 +896,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-person-badge-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-person-badge-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Professional Drivers</h6>
@@ -908,8 +910,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-car-front-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-car-front-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Luxury Fleet</h6>
@@ -922,8 +924,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-shield-lock-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-shield-lock-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Safe & Secure</h6>
@@ -936,8 +938,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-headset fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-headset fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">24/7 Support</h6>
@@ -950,8 +952,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-currency-rupee fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-currency-rupee fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Affordable Pricing</h6>
@@ -964,8 +966,8 @@ Hub.{% endblock %}
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-clock-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-clock-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">On-Time Service</h6>

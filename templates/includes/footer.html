@@ -9,113 +9,155 @@
 {% url 'bus_rental_coimbatore' as bus_menu_url %}
 {% endif %}
 
-<footer class="vth-light-footer bg-white border-top py-5 text-dark" aria-label="Site Footer">
+<style>
+    .vth-split-footer {
+        background: #B91C1C;
+        color: #FFFFFF;
+        overflow: hidden;
+    }
+    .vth-footer-left-col {
+        background: #111111;
+    }
+    .vth-footer-right-col {
+        background: linear-gradient(135deg, #B91C1C 0%, #DC2626 100%);
+    }
+    @media (min-width: 992px) {
+        .vth-split-footer {
+            background: linear-gradient(90deg, #111111 0%, #111111 32%, #B91C1C 32%, #DC2626 100%);
+        }
+        .vth-footer-left-col,
+        .vth-footer-right-col {
+            background: transparent;
+        }
+    }
+    .vth-split-footer h4 {
+        color: #FFFFFF !important;
+        white-space: nowrap;
+    }
+    .vth-split-footer a {
+        color: rgba(255, 255, 255, 0.88) !important;
+        transition: color 0.2s ease;
+    }
+    .vth-split-footer a:hover {
+        color: #FFFFFF !important;
+    }
+    .vth-split-footer .vth-footer-muted {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+    .vth-split-footer .vth-footer-border {
+        border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+    }
+</style>
+
+<footer class="vth-split-footer text-white" aria-label="Site Footer">
     <div class="container">
-        <div class="row g-4 justify-content-between pb-4">
-            
-            <!-- Column 1: Brand Info (LEFT -> CENTER) -->
-            <div class="col-lg-3 col-md-6 reveal-left">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="{% static 'images/logo/logo.webp' %}" alt="Vibhu Travel Hub Logo" loading="lazy" width="192" height="192" style="height: 48px; width: auto;">
-                    <div>
-                        <h4 class="fw-bold text-dark mb-0 lh-1" style="font-size: 1.2rem; letter-spacing: -0.5px;">VIBHU TRAVEL HUB</h4>
-                        <span class="text-danger fw-bold small text-uppercase" style="font-size: 0.65rem; letter-spacing: 1px;">PREMIUM TRAVEL SERVICES</span>
+        <div class="row g-0 align-items-stretch">
+
+            <!-- Left Side: Black Background (Brand Info) -->
+            <div class="col-lg-4 vth-footer-left-col py-5 pe-lg-4 d-flex flex-column justify-content-between reveal-left">
+                <div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="{% static 'images/logo/logo.webp' %}" alt="Vibhu Travel Hub Logo" loading="lazy" width="192" height="192" style="height: 68px; width: auto;">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0 lh-1" style="font-size: 1.25rem; letter-spacing: -0.5px;">VIBHU TRAVEL HUB</h4>
+                            <span class="text-danger fw-bold small text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">PREMIUM TRAVEL SERVICES</span>
+                        </div>
+                    </div>
+                    <p class="vth-footer-muted small mb-4" style="line-height: 1.65;">
+                        Your trusted travel partner across South India. Experience comfort, safety &amp; luxury with our premium cabs, tempo travellers, and buses.
+                    </p>
+                    <div class="d-flex gap-2 mb-4">
+                        <a href="https://wa.me/919655866660" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color: #25D366 !important;" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/vibhu_travelhub?igsi=bGo1eGQzODhpNWxu" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color: #E31E24 !important;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1DdSczz5rQ/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color: #1877F2 !important;" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <p class="text-muted small mb-3" style="line-height: 1.6;">
-                    Your trusted travel partner across South India. Experience comfort, safety & luxury with our premium cabs, tempo travellers, and buses.
-                </p>
-                <div class="d-flex gap-2">
-                    <a href="https://wa.me/919655866660" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm text-success" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/vibhu_travelhub?igsi=bGo1eGQzODhpNWxu" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-circle shadow-sm text-danger" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1DdSczz5rQ/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-circle shadow-sm text-primary" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+
+                <div class="vth-footer-border pt-3 d-flex align-items-center gap-2 text-nowrap" style="font-size: 0.82rem;">
+                    <span style="color: rgba(255,255,255,0.85);">Developed by</span>
+                    <a href="https://yaazh360digitech.in/" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center text-decoration-none bg-white rounded-2 px-2 py-1" title="Yaazh 360 DIGITECH">
+                        <img src="{% static 'images/brand/yaazh360_logo.webp' %}?v=2.0" alt="Yaazh 360 Digitech" width="160" height="40" style="height: 40px; width: auto; max-width: 180px; object-fit: contain;" loading="lazy">
+                    </a>
                 </div>
             </div>
 
-            <!-- Column 2: Quick Links (BOTTOM -> TOP) -->
-            <div class="col-lg-2 col-md-6 reveal-up">
-                <h4 class="fw-bold text-dark mb-3" style="font-size: 1rem;">Quick Links</h4>
-                <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
-                    <li><a href="{% url 'home' %}" class="text-muted text-decoration-none hover-danger">Home</a></li>
-                    <li><a href="{% url 'about' %}" class="text-muted text-decoration-none hover-danger">About</a></li>
-                    <li><a href="{% url 'home' %}#fleet" class="text-muted text-decoration-none hover-danger">Fleet</a></li>
-                    <li><a href="{% url 'home' %}#destinations" class="text-muted text-decoration-none hover-danger">Destinations</a></li>
-                    <li><a href="{% url 'home' %}#services" class="text-muted text-decoration-none hover-danger">Services</a></li>
-                    <li><a href="{% url 'blog_list' %}" class="text-muted text-decoration-none hover-danger">Blog</a></li>
-                    <li><a href="{% url 'fleet_partner' %}" class="text-muted text-decoration-none hover-danger">Become a Partner</a></li>
-                    <li><a href="{% url 'contact' %}" class="text-muted text-decoration-none hover-danger">Contact</a></li>
+            <!-- Right Side: Red Background (Links & Contact) -->
+            <div class="col-lg-8 vth-footer-right-col py-5 ps-lg-5 d-flex flex-column justify-content-between">
+                <div class="row g-4 justify-content-between pb-4">
+                    <!-- Column 2: Quick Links -->
+                    <div class="col-lg-3 col-md-4 col-6 reveal-up">
+                        <h4 class="fw-bold text-white mb-3" style="font-size: 1rem;">Quick Links</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-2 small">
+                            <li><a href="{% url 'home' %}" class="text-decoration-none">Home</a></li>
+                            <li><a href="{% url 'about' %}" class="text-decoration-none">About</a></li>
+                            <li><a href="{% url 'home' %}#fleet" class="text-decoration-none">Fleet</a></li>
+                            <li><a href="{% url 'home' %}#destinations" class="text-decoration-none">Destinations</a></li>
+                            <li><a href="{% url 'home' %}#services" class="text-decoration-none">Services</a></li>
+                            <li><a href="{% url 'blog_list' %}" class="text-decoration-none">Blog</a></li>
+                            <li><a href="{% url 'fleet_partner' %}" class="text-decoration-none">Become a Partner</a></li>
+                            <li><a href="{% url 'contact' %}" class="text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
 
-                </ul>
+                    <!-- Column 3: Our Services -->
+                    <div class="col-lg-3 col-md-4 col-6 reveal-up">
+                        <h4 class="fw-bold text-white mb-3" style="font-size: 1rem;">Our Services</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-2 small">
+                            <li><a href="{% url 'local_cab_service' %}" class="text-decoration-none">Local Cab Service</a></li>
+                            <li><a href="{{ outstation_menu_url }}" class="text-decoration-none">Outstation Tours</a></li>
+                            <li><a href="{{ tempo_menu_url }}" class="text-decoration-none">Tempo Traveller</a></li>
+                            <li><a href="{{ bus_menu_url }}" class="text-decoration-none">Luxury Bus Rental</a></li>
+                            <li><a href="{% url 'pilgrimage_trips' %}" class="text-decoration-none">Pilgrimage Trips</a></li>
+                            <li><a href="{% url 'corporate_travel' %}" class="text-decoration-none">Corporate Travel</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Destinations -->
+                    <div class="col-lg-2 col-md-4 col-6 reveal-up">
+                        <h4 class="fw-bold text-white mb-3" style="font-size: 1rem;">Destinations</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-2 small">
+                            <li><a href="{% url 'tamil_nadu_view' %}" class="text-decoration-none">Tamil Nadu</a></li>
+                            <li><a href="{% url 'kerala_view' %}" class="text-decoration-none">Kerala</a></li>
+                            <li><a href="{% url 'karnataka_view' %}" class="text-decoration-none">Karnataka</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: Contact Info -->
+                    <div class="col-lg-4 col-md-12 reveal-right">
+                        <h4 class="fw-bold text-white mb-3" style="font-size: 1rem;">Contact Info</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-2 small vth-footer-muted">
+                            <li class="d-flex align-items-center gap-2">
+                                <i class="bi bi-telephone-fill text-white"></i>
+                                <a href="tel:+919655866660" class="text-decoration-none">+91 96558 66660</a>
+                            </li>
+                            <li class="d-flex align-items-center gap-2">
+                                <i class="bi bi-envelope-fill text-white"></i>
+                                <a href="mailto:vibhutravelhub66@gmail.com" class="text-decoration-none">vibhutravelhub66@gmail.com</a>
+                            </li>
+                            <li class="d-flex align-items-start gap-2">
+                                <i class="bi bi-geo-alt-fill text-white mt-1"></i>
+                                <span>87, Grey Town, Coimbatore, Tamil Nadu – 641018</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2 text-white fw-medium mt-1">
+                                <i class="bi bi-clock-history text-white"></i>
+                                <span>{% if request.resolver_match.url_name == 'blog_list' or request.resolver_match.url_name == 'blog_detail' %}Mon–Sat {% else %}Coimbatore office open Mon–Sat{% endif %}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bottom Copyright Bar -->
+                <div class="vth-footer-border pt-4 d-flex flex-column flex-md-row align-items-center justify-content-between vth-footer-muted gap-3" style="font-size: 0.82rem;">
+                    <p class="mb-0 text-nowrap">&copy; 2026 Vibhu Travel Hub. All Rights Reserved.</p>
+
+                    <div class="d-flex gap-3 text-nowrap">
+                        <a href="{% url 'privacy_policy' %}" class="text-decoration-none">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="{% url 'terms_conditions' %}" class="text-decoration-none">Terms &amp; Conditions</a>
+                    </div>
+                </div>
             </div>
 
-            <!-- Column 3: Our Services (BOTTOM -> TOP) -->
-            <div class="col-lg-2 col-md-6 reveal-up">
-                <h4 class="fw-bold text-dark mb-3" style="font-size: 1rem;">Our Services</h4>
-                <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
-                    <li><a href="{% url 'local_cab_service' %}" class="text-muted text-decoration-none hover-danger">Local Cab Service</a></li>
-                    <li><a href="{{ outstation_menu_url }}" class="text-muted text-decoration-none hover-danger">Outstation Tours</a></li>
-                    <li><a href="{{ tempo_menu_url }}" class="text-muted text-decoration-none hover-danger">Tempo Traveller</a></li>
-                    <li><a href="{{ bus_menu_url }}" class="text-muted text-decoration-none hover-danger">Luxury Bus Rental</a></li>
-                    <li><a href="{% url 'pilgrimage_trips' %}" class="text-muted text-decoration-none hover-danger">Pilgrimage Trips</a></li>
-                    <li><a href="{% url 'corporate_travel' %}" class="text-muted text-decoration-none hover-danger">Corporate Travel</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Destinations (BOTTOM -> TOP) -->
-            <div class="col-lg-2 col-md-6 reveal-up">
-                <h4 class="fw-bold text-dark mb-3" style="font-size: 1rem;">Destinations</h4>
-                <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
-                    <li><a href="{% url 'tamil_nadu_view' %}" class="text-muted text-decoration-none hover-danger">Tamil Nadu</a></li>
-                    <li><a href="{% url 'kerala_view' %}" class="text-muted text-decoration-none hover-danger">Kerala</a></li>
-                    <li><a href="{% url 'karnataka_view' %}" class="text-muted text-decoration-none hover-danger">Karnataka</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 5: Contact Info (RIGHT -> CENTER) -->
-            <div class="col-lg-3 col-md-6 reveal-right">
-                <h4 class="fw-bold text-dark mb-3" style="font-size: 1rem;">Contact Info</h4>
-                <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
-                    <li class="d-flex align-items-center gap-2">
-                        <i class="bi bi-telephone-fill text-danger"></i>
-                        <a href="tel:+919655866660" class="text-muted text-decoration-none">+91 96558 66660</a>
-                    </li>
-                    <li class="d-flex align-items-center gap-2">
-                        <i class="bi bi-envelope-fill text-danger"></i>
-                        <a href="mailto:vibhutravelhub66@gmail.com" class="text-muted text-decoration-none">vibhutravelhub66@gmail.com</a>
-                    </li>
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-geo-alt-fill text-danger mt-1"></i>
-                        <span>87, Grey Town, Coimbatore, Tamil Nadu – 641018</span>
-                    </li>
-                    <li class="d-flex align-items-center gap-2 text-dark fw-medium mt-1">
-                        <i class="bi bi-clock-history text-danger"></i>
-                        <span>{% if request.resolver_match.url_name == 'blog_list' or request.resolver_match.url_name == 'blog_detail' %}Mon–Sat {% else %}Coimbatore office open Mon–Sat{% endif %}</span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Bottom Copyright Bar -->
-        <div class="border-top pt-4 d-flex flex-column flex-md-row align-items-center justify-content-between small text-muted gap-3">
-            <p class="mb-0">&copy; 2026 Vibhu Travel Hub. All Rights Reserved.</p>
-            
-            <!-- Developed by Yaazh360digitech -->
-            <div class="d-flex align-items-center gap-2">
-                <span style="font-size: 0.85rem; color: #64748B;">Developed by</span>
-                <a href="https://yaazh360digitech.in/" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center text-decoration-none" title="Yaazh 360 DIGITECH">
-                    <img src="{% static 'images/brand/yaazh360_logo.webp' %}?v=2.0" alt="Yaazh 360 Digitech" width="95" height="32" style="height: 32px; width: auto; max-width: 150px; object-fit: contain;" loading="lazy">
-                </a>
-            </div>
-
-            <div class="d-flex gap-3">
-                <a href="{% url 'privacy_policy' %}" class="text-muted text-decoration-none">Privacy Policy</a>
-                <span>|</span>
-                <a href="{% url 'terms_conditions' %}"
-   class="text-muted text-decoration-none">
-    Terms & Conditions
-</a>
-            </div>
         </div>
     </div>
 </footer>

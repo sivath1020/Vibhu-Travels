@@ -108,20 +108,28 @@
         box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
     }
 
+    .cab-service-card .img-reveal img {
+        height: 200px !important;
+        width: 100% !important;
+        object-fit: cover;
+        display: block;
+    }
+
     .cab-icon-badge {
-        width: 46px;
-        height: 46px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         background: #FFFFFF;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
         color: #E31E24;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
-        margin-top: -23px;
-        margin-left: 20px;
-        position: relative;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: 12px;
+        left: 16px;
+        margin: 0;
         z-index: 3;
     }
 
@@ -187,7 +195,7 @@
 
     .gallery-tile img {
         width: 100%;
-        height: 100%;
+        height: 100% !important;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
@@ -245,7 +253,7 @@
         <div class="p-3.5 rounded-4 bg-white border border-light-subtle shadow-sm reveal-up">
             <div class="row g-3 text-start align-items-center">
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-shield-check text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Safe & Secure</h6>
@@ -255,7 +263,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-person-check text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Professional Drivers</h6>
@@ -264,7 +272,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-car-front text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Luxury Fleet</h6>
@@ -273,7 +281,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-clock-history text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">24/7 Support</h6>
@@ -282,7 +290,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-receipt text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Best Price</h6>
@@ -291,7 +299,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <div class="d-flex align-items-center gap-2.5">
+                    <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-airplane text-danger fs-3"></i>
                         <div>
                             <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Airport Transfer</h6>
@@ -329,14 +337,8 @@
                     Kerala is a beautiful blend of tranquil backwaters, mist-covered hills, tropical beaches and rich cultural traditions, offering travellers an experience that combines relaxation, nature and discovery.
                 </p>
                 <div class="about-text-content text-secondary small-text mb-4" style="font-size: 0.98rem; line-height: 1.75;">
-                    <p class="mb-3">
-                        Stretching along the Malabar Coast of the Arabian Sea, Kerala features palm-shaded backwater lagoons, spice-scented mountain peaks, and lush wildlife reserves. From the historic commercial port of <a href="{% url 'city_detail' state_slug='kerala' city_slug='cochin' %}" class="text-danger text-decoration-none fw-bold">Cochin</a> to the royal capital of <a href="{% url 'city_detail' state_slug='kerala' city_slug='trivandrum' %}" class="text-danger text-decoration-none fw-bold">Trivandrum</a>, Kerala travel creates memories for family vacations, honeymoons, and Ayurvedic retreats.
-                    </p>
-                    <p class="mb-3">
-                        The crowning glory among Kerala tourist places is its world-renowned backwaters. Cruising on Kettuvallam houseboats in Alleppey and Kumarakom, exploring tea plantations in Munnar, spotting wildlife in Thekkady, or relaxing on red cliff beaches in Varkala and Kovalam showcase the state's natural variety. Cultural capital <a href="{% url 'city_detail' state_slug='kerala' city_slug='thrissur' %}" class="text-danger text-decoration-none fw-bold">Thrissur</a> and spice hub <a href="{% url 'city_detail' state_slug='kerala' city_slug='calicut' %}" class="text-danger text-decoration-none fw-bold">Calicut</a> complete the rich cultural mosaic.
-                    </p>
                     <p class="mb-0">
-                        Planning Kerala tour packages from Coimbatore is easy with Vibhu Travel Hub. We offer custom tour packages, outstation cabs, Tempo Travellers and bus rentals for trips to Munnar, Wayanad, Alleppey, Kochi and other popular Kerala destinations.
+                        Discover <a href="{% url 'city_detail' state_slug='kerala' city_slug='cochin' %}" class="text-danger text-decoration-none fw-bold">Cochin</a>, <a href="{% url 'city_detail' state_slug='kerala' city_slug='trivandrum' %}" class="text-danger text-decoration-none fw-bold">Trivandrum</a>, <a href="{% url 'city_detail' state_slug='kerala' city_slug='thrissur' %}" class="text-danger text-decoration-none fw-bold">Thrissur</a>, <a href="{% url 'city_detail' state_slug='kerala' city_slug='calicut' %}" class="text-danger text-decoration-none fw-bold">Calicut</a>, Munnar, Alleppey, Wayanad, and Thekkady with Vibhu Travel Hub's outstation cabs, Tempo Travellers, and tour buses.
                     </p>
                 </div>
 
@@ -835,7 +837,7 @@
                 <h2 class="fw-extrabold text-dark mb-4" style="font-size: 2rem; letter-spacing: -0.5px;">Beautiful
                     Kerala</h2>
 
-                <div class="row g-2.5">
+                <div class="row g-3">
                     <div class="col-4">
                         <div class="gallery-tile">
                             <img src="{% static 'images/destinations/munnar.webp' %}" alt="Munnar Tea Plantations">
@@ -889,8 +891,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-person-badge-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-person-badge-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Professional Drivers</h6>
@@ -903,8 +905,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-car-front-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-car-front-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Luxury Fleet</h6>
@@ -917,8 +919,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-shield-lock-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-shield-lock-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Safe & Secure</h6>
@@ -931,8 +933,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-headset fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-headset fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">24/7 Support</h6>
@@ -945,8 +947,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-currency-rupee fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-currency-rupee fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Affordable Pricing</h6>
@@ -959,8 +961,8 @@
                     <div class="col-6">
                         <div class="d-flex align-items-start gap-3">
                             <div class="rounded-circle p-2.5 text-danger border border-danger-subtle bg-danger-subtle d-flex align-items-center justify-content-center"
-                                style="width: 44px; height: 44px; min-width: 44px;">
-                                <i class="bi bi-clock-fill fs-5"></i>
+                                style="width: 56px; height: 56px; min-width: 56px;">
+                                <i class="bi bi-clock-fill fs-3"></i>
                             </div>
                             <div>
                                 <h6 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">On-Time Service</h6>
