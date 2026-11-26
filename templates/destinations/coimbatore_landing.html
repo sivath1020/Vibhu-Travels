@@ -729,6 +729,13 @@
                 Explore our popular travel services from Coimbatore for
                 family trips, group travel, Ooty tours and outstation journeys.
             </p>
+            {% if landing_data.slug == "tempo-traveller-rental-coimbatore" %}
+                <p class="mt-2 mb-0"><a href="{% url 'tempo_traveller' %}">Compare 14-seater AC and non-AC options</a></p>
+            {% elif landing_data.slug == "bus-rental-coimbatore" %}
+                <p class="mt-2 mb-0"><a href="{% url 'bus_booking' %}">Read the bus and coach seating guide</a></p>
+            {% elif landing_data.slug == "outstation-cab-service-coimbatore" %}
+                <p class="mt-2 mb-0"><a href="{% url 'outstation_tours' %}">Explore South India outstation tour ideas</a></p>
+            {% endif %}
         </div>
 
         <div class="row g-4">

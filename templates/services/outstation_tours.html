@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block meta_title %}Outstation Cab Service from Coimbatore | Vibhu Travel Hub{% endblock %}
+{% block canonical %}https://vibhutravelhub.com{% url 'outstation_tours' %}{% endblock %}
 
-{% block meta_description %}
-Book outstation cab services from Coimbatore with Vibhu Travel Hub. Comfortable cabs for Tamil Nadu, Kerala, Karnataka and long-distance travel.
-{% endblock %}
+{% block meta_title %}South India Outstation Tour Ideas | Vibhu Travel Hub{% endblock %}
+
+{% block meta_description %}Explore route ideas for Tamil Nadu, Kerala and Karnataka, from one-way rides to multi-stop South India tours.{% endblock %}
 {% block keywords %}Innova rental in Coimbatore, Innova Crysta rental in Chennai, Force Urbania rental in Coimbatore, Tempo Traveller rental in Madurai{% endblock %}
-{% block og_title %}Outstation Cab Booking & Tour Packages | Vibhu Travel Hub{% endblock %}
-{% block og_description %}Book outstation cabs and customized tour packages across Tamil Nadu, Kerala, and Karnataka with transparent per-km pricing and expert drivers.{% endblock %}
+{% block og_title %}South India Outstation Tour Ideas | Vibhu Travel Hub{% endblock %}
+{% block og_description %}Explore route ideas for Tamil Nadu, Kerala and Karnataka, from one-way rides to multi-stop South India tours.{% endblock %}
 {% block og_image %}https://vibhutravelhub.com{% static 'images/services/outstation-hero.webp' %}{% endblock %}
 
-{% block twitter_title %}Outstation Cab Booking & Tour Packages | Vibhu Travel Hub{% endblock %}
-{% block twitter_description %}Book outstation cabs and customized tour packages across Tamil Nadu, Kerala, and Karnataka with transparent per-km pricing and expert drivers.{% endblock %}
+{% block twitter_title %}South India Outstation Tour Ideas | Vibhu Travel Hub{% endblock %}
+{% block twitter_description %}Explore route ideas for Tamil Nadu, Kerala and Karnataka, from one-way rides to multi-stop South India tours.{% endblock %}
 {% block twitter_image %}https://vibhutravelhub.com{% static 'images/services/outstation-hero.webp' %}{% endblock %}
 
 {% block schema %}
@@ -144,7 +144,7 @@ Book outstation cab services from Coimbatore with Vibhu Travel Hub. Comfortable 
             <div class="col-lg-7 col-md-10">
                 <span class="vth-hero-script reveal-down d-block mb-1" style="color: #FF5A5F; font-size: 1.8rem; font-family: 'Caveat', cursive, sans-serif;">OUTSTATION CAB RENTAL</span>
                 <h1 class="hero-main-title text-white mb-3 reveal-left" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; letter-spacing: -1.2px;">
-                    Outstation Cab Rental from Coimbatore
+                    South India Outstation Tour Ideas
                 </h1>
                 <p class="text-white-50 mb-4 reveal-left" style="font-size: 1.08rem; line-height: 1.65; color: rgba(255, 255, 255, 0.9) !important; max-width: 620px;">
                     Travel comfortably across South India with experienced drivers, well-maintained vehicles and flexible one-way and round-trip travel options.
@@ -153,8 +153,8 @@ Book outstation cab services from Coimbatore with Vibhu Travel Hub. Comfortable 
                     <button class="btn btn-danger rounded-pill px-4 py-2.5 fw-bold text-white shadow-sm border-0 d-inline-flex align-items-center gap-2" style="background-color: #E31E24; font-size: 0.95rem;" data-bs-toggle="modal" data-bs-target="#enquiryModal" data-destination="Outstation Cab Rental from Coimbatore">
                         Get a Quote <i class="bi bi-arrow-right"></i>
                     </button>
-                    <a href="#about" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
-                        Explore Service <i class="bi bi-compass"></i>
+                    <a href="{% url 'outstation_cab_coimbatore' %}" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
+                        Coimbatore outstation cab options <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>

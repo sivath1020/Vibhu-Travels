@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block canonical %}https://vibhutravelhub.com{% url 'tempo_traveller' %}{% endblock %}
+
 {% block meta_title %}
-Tempo Traveller Rental in Coimbatore | 12 & 14 Seater
+14-Seater Tempo Traveller Guide | Vibhu Travel Hub
 {% endblock %}
 
-{% block meta_description %}
-Book a Tempo Traveller in Coimbatore for family trips, group tours, pilgrimages and outstation travel. 14 seater AC and Non-AC options are available.
-{% endblock %}
+{% block meta_description %}Compare AC and non-AC 14-seat vehicles for family trips, pilgrimages and group tours.{% endblock %}
 {% block keywords %}Tempo Traveller Rental in Coimbatore, Tempo Traveller in Coimbatore, 14 Seater Tempo Traveller on Rent in Coimbatore, 14 Seater Tempo Traveller Rental Coimbatore, Tempo Traveller 12 Seater Price in Coimbatore, AC Tempo Traveller in Coimbatore, Non-AC Tempo Traveller, Tempo Traveller for Family Trips, Tempo Traveller for Group Tours, Coimbatore to Ooty Tempo Traveller, Coimbatore to Munnar Tempo Traveller, Coimbatore to Kodaikanal Tempo Traveller{% endblock %}
-{% block og_title %}Tempo Traveller Rental in Coimbatore | 12 & 14 Seater{% endblock %}
-{% block og_description %}Book 14 seater AC and Non-AC Tempo Travellers in Coimbatore for family trips, group tours, pilgrimages and outstation journeys.{% endblock %}
+{% block og_title %}14-Seater Tempo Traveller Guide | Vibhu Travel Hub{% endblock %}
+{% block og_description %}Compare AC and non-AC 14-seat vehicles for family trips, pilgrimages and group tours.{% endblock %}
 {% block og_image %}https://vibhutravelhub.com{% static 'images/services/tempo-hero.webp' %}{% endblock %}
 
-{% block twitter_title %}Tempo Traveller Rental in Coimbatore | 12 & 14 Seater{% endblock %}
-{% block twitter_description %}Book 14 seater AC and Non-AC Tempo Travellers in Coimbatore for family trips, group tours, pilgrimages and outstation journeys.{% endblock %}
+{% block twitter_title %}14-Seater Tempo Traveller Guide | Vibhu Travel Hub{% endblock %}
+{% block twitter_description %}Compare AC and non-AC 14-seat vehicles for family trips, pilgrimages and group tours.{% endblock %}
 {% block twitter_image %}https://vibhutravelhub.com{% static 'images/services/tempo-hero.webp' %}{% endblock %}
 
 {% block schema %}
@@ -146,7 +146,7 @@ Book a Tempo Traveller in Coimbatore for family trips, group tours, pilgrimages 
             <div class="col-lg-7 col-md-10">
                 <span class="vth-hero-script reveal-down d-block mb-1" style="color: #FF5A5F; font-size: 1.8rem; font-family: 'Caveat', cursive, sans-serif;">GROUP TRAVEL</span>
                 <h1 class="hero-main-title text-white mb-3 reveal-left" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; letter-spacing: -1.2px;">
-                    Tempo Traveller Rental in Coimbatore
+                    14-Seater Tempo Traveller Guide
                 </h1>
                 <p class="text-white-50 mb-4 reveal-left" style="font-size: 1.08rem; line-height: 1.65; color: rgba(255, 255, 255, 0.9) !important; max-width: 620px;">
                     Spacious and comfortable Tempo Travellers for family trips, group tours, pilgrimages, weddings and long-distance journeys.
@@ -155,8 +155,8 @@ Book a Tempo Traveller in Coimbatore for family trips, group tours, pilgrimages 
                     <button class="btn btn-danger rounded-pill px-4 py-2.5 fw-bold text-white shadow-sm border-0 d-inline-flex align-items-center gap-2" style="background-color: #E31E24; font-size: 0.95rem;" data-bs-toggle="modal" data-bs-target="#enquiryModal" data-destination="Tempo Traveller Rental in Coimbatore">
                         Get a Quote <i class="bi bi-arrow-right"></i>
                     </button>
-                    <a href="#about" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
-                        Explore Service <i class="bi bi-compass"></i>
+                    <a href="{% url 'tempo_traveller_rental_coimbatore' %}" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
+                        Coimbatore tempo traveller rental and quotes <i class="bi bi-arrow-right"></i>
                     </a>
             </div>
         </div>

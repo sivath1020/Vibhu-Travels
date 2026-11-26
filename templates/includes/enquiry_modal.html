@@ -3,7 +3,7 @@
 
 <!-- Enquiry Modal -->
 <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true" data-bs-backdrop="blur">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered{% if request.resolver_match.url_name != 'blog_list' and request.resolver_match.url_name != 'blog_detail' %} modal-dialog-scrollable{% endif %}">
         <div class="modal-content">
             
             <div class="modal-header d-flex align-items-start justify-content-between">
@@ -27,19 +27,19 @@
                         <!-- Full Name -->
                         <div class="col-md-6 col-12 mb-2">
                             <label for="enquiryFullName" class="form-label">Full Name *</label>
-                            <input type="text" class="form-control anim-input" id="enquiryFullName" name="full_name" placeholder="Enter your full name" required>
+                            <input type="text" class="form-control anim-input" id="enquiryFullName" name="full_name"{% if request.resolver_match.url_name != 'blog_list' and request.resolver_match.url_name != 'blog_detail' %} autocomplete="name"{% endif %} placeholder="Enter your full name" required>
                         </div>
                         
                         <!-- Mobile Number -->
                         <div class="col-md-6 col-12 mb-2">
                             <label for="enquiryMobile" class="form-label">Mobile Number *</label>
-                            <input type="tel" class="form-control anim-input" id="enquiryMobile" name="mobile" placeholder="Enter your mobile number" required>
+                            <input type="tel" class="form-control anim-input" id="enquiryMobile" name="mobile"{% if request.resolver_match.url_name != 'blog_list' and request.resolver_match.url_name != 'blog_detail' %} autocomplete="tel"{% endif %} placeholder="Enter your mobile number" required>
                         </div>
                         
                         <!-- Email Address -->
                         <div class="col-md-6 col-12 mb-2">
                             <label for="enquiryEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control anim-input" id="enquiryEmail" name="email" placeholder="Enter your email address">
+                            <input type="email" class="form-control anim-input" id="enquiryEmail" name="email"{% if request.resolver_match.url_name != 'blog_list' and request.resolver_match.url_name != 'blog_detail' %} autocomplete="email"{% endif %} placeholder="Enter your email address">
                         </div>
                         
                         <!-- Travel Date -->

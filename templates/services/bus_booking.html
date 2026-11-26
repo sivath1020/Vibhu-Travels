@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block meta_title %}Bus Rental in Coimbatore | Bus Booking for Tours & Events{% endblock %}
+{% block canonical %}https://vibhutravelhub.com{% url 'bus_booking' %}{% endblock %}
 
-{% block meta_description %}
-Book a bus rental in Coimbatore for school and college tours, weddings, events, group trips and outstation journeys. AC and Non-AC bus options are available based on your travel requirements.
-{% endblock %}
+{% block meta_title %}Bus &amp; Coach Seating Guide | Vibhu Travel Hub{% endblock %}
+
+{% block meta_description %}Compare coaches for school tours, weddings and group trips by passenger count, luggage space and air-conditioning.{% endblock %}
 {% block keywords %}Bus Rental in Coimbatore, Bus Booking in Coimbatore, Mini Bus Rental in Coimbatore, Tourist Bus Rental in Coimbatore, College Tour Bus Rental in Coimbatore, School Tour Bus Rental in Coimbatore, AC Bus Rental in Coimbatore, Non-AC Bus Rental, Group Bus Rental, Coach Rental in Coimbatore{% endblock %}
-{% block og_title %}Bus Rental in Coimbatore | Bus Booking for Tours & Events{% endblock %}
-{% block og_description %}Book reliable bus and coach rental services in Coimbatore for corporate events, marriage functions, group tours, pilgrimages and outstation travel.{% endblock %}
+{% block og_title %}Bus and Coach Seating Guide | Vibhu Travel Hub{% endblock %}
+{% block og_description %}Compare coaches for school tours, weddings and group trips by passenger count, luggage space and air-conditioning.{% endblock %}
 {% block og_image %}https://vibhutravelhub.com{% static 'images/services/bus-hero.webp' %}{% endblock %}
 
-{% block twitter_title %}Bus Rental in Coimbatore | Bus Booking for Tours & Events{% endblock %}
-{% block twitter_description %}Book reliable bus and coach rental services in Coimbatore for corporate events, marriage functions, group tours, pilgrimages and outstation travel.{% endblock %}
+{% block twitter_title %}Bus and Coach Seating Guide | Vibhu Travel Hub{% endblock %}
+{% block twitter_description %}Compare coaches for school tours, weddings and group trips by passenger count, luggage space and air-conditioning.{% endblock %}
 {% block twitter_image %}https://vibhutravelhub.com{% static 'images/services/bus-hero.webp' %}{% endblock %}
 
 {% block schema %}
@@ -144,7 +144,7 @@ Book a bus rental in Coimbatore for school and college tours, weddings, events, 
             <div class="col-lg-7 col-md-10">
                 <span class="vth-hero-script reveal-down d-block mb-1" style="color: #FF5A5F; font-size: 1.8rem; font-family: 'Caveat', cursive, sans-serif;">BUS RENTAL</span>
                 <h1 class="hero-main-title text-white mb-3 reveal-left" style="font-size: 3.6rem; font-weight: 800; line-height: 1.1; letter-spacing: -1.2px;">
-                    Bus Rental in Coimbatore
+                    Bus and Coach Seating Guide
                 </h1>
                 <p class="text-white-50 mb-4 reveal-left" style="font-size: 1.08rem; line-height: 1.65; color: rgba(255, 255, 255, 0.9) !important; max-width: 620px;">
                     Book a bus rental in Coimbatore for school and college tours, weddings, events, pilgrimages and group travel. Choose a suitable bus or coach based on your passenger count, route and travel requirements.
@@ -153,8 +153,8 @@ Book a bus rental in Coimbatore for school and college tours, weddings, events, 
                     <button class="btn btn-danger rounded-pill px-4 py-2.5 fw-bold text-white shadow-sm border-0 d-inline-flex align-items-center gap-2" style="background-color: #E31E24; font-size: 0.95rem;" data-bs-toggle="modal" data-bs-target="#enquiryModal" data-destination="Bus Rental in Coimbatore">
                         Get a Quote <i class="bi bi-arrow-right"></i>
                     </button>
-                    <a href="#about" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
-                        Explore Service <i class="bi bi-compass"></i>
+                    <a href="{% url 'bus_rental_coimbatore' %}" class="btn btn-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; color: #1F2937; background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.9);">
+                        Coimbatore bus rental and quotes <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>

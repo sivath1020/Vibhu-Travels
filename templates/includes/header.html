@@ -1,4 +1,13 @@
 {% load static %}
+{% if request.resolver_match.url_name == 'blog_list' or request.resolver_match.url_name == 'blog_detail' %}
+{% url 'outstation_tours' as outstation_menu_url %}
+{% url 'tempo_traveller' as tempo_menu_url %}
+{% url 'bus_booking' as bus_menu_url %}
+{% else %}
+{% url 'outstation_cab_coimbatore' as outstation_menu_url %}
+{% url 'tempo_traveller_rental_coimbatore' as tempo_menu_url %}
+{% url 'bus_rental_coimbatore' as bus_menu_url %}
+{% endif %}
 
 <!-- Mobile Overlay -->
 <div class="mobile-sidebar-overlay" id="sidebarOverlay"></div>
@@ -39,9 +48,9 @@
         </a>
         <div class="mobile-accordion-content" id="mobileServices">
             <a href="{% url 'local_cab_service' %}" class="mobile-accordion-link">Local Cab Service</a>
-            <a href="{% url 'outstation_tours' %}" class="mobile-accordion-link">Outstation Tours</a>
-            <a href="{% url 'tempo_traveller' %}" class="mobile-accordion-link">Tempo Traveller</a>
-            <a href="{% url 'bus_booking' %}" class="mobile-accordion-link">Luxury Bus Rental</a>
+            <a href="{{ outstation_menu_url }}" class="mobile-accordion-link">Outstation Tours</a>
+            <a href="{{ tempo_menu_url }}" class="mobile-accordion-link">Tempo Traveller</a>
+            <a href="{{ bus_menu_url }}" class="mobile-accordion-link">Luxury Bus Rental</a>
             <a href="{% url 'pilgrimage_trips' %}" class="mobile-accordion-link">Pilgrimage Trips</a>
             <a href="{% url 'corporate_travel' %}" class="mobile-accordion-link">Corporate Travel</a>
         </div>
@@ -93,8 +102,54 @@
 
 <header class="site-header" id="siteHeader">
     <!-- Slim Top Contact Bar -->
+    <style>
+        #siteHeader.site-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 1030 !important;
+        }
+        main {
+            padding-top: 60px;
+        }
+        @media (min-width: 992px) {
+            main {
+                padding-top: 90px;
+            }
+        }
+        .vth-navbar {
+            padding: 4px 0 !important;
+        }
+        .vth-topbar {
+            max-height: 42px;
+            overflow: hidden;
+            transition: max-height 0.25s ease, opacity 0.2s ease, border-color 0.2s ease;
+        }
+        #siteHeader.scrolled .vth-topbar {
+            max-height: 0 !important;
+            opacity: 0 !important;
+            border-bottom-color: transparent !important;
+            pointer-events: none;
+        }
+        .nav-phone-banner-img {
+            width: 205px !important;
+            height: auto !important;
+            max-width: none !important;
+            max-height: 46px !important;
+            object-fit: contain;
+            display: block;
+        }
+        .vth-topbar .topbar-link {
+            font-size: 0.92rem;
+        }
+        .vth-navbar .dropdown-toggle::after {
+            display: none !important;
+        }
+    </style>
     <div class="vth-topbar d-none d-lg-block">
-        <div class="container d-flex align-items-center justify-content-between py-2">
+        <div class="container-fluid px-3 px-lg-4 d-flex align-items-center justify-content-between py-1">
             <!-- Left Info -->
             <div class="topbar-info d-flex align-items-center gap-4">
                 <a href="tel:+919655866660" class="topbar-link">
@@ -107,7 +162,7 @@
 
             <!-- Center Schedule -->
             <div class="topbar-schedule text-muted small fw-medium">
-                <i class="bi bi-clock-history me-1"></i> Mon–Sat  Available
+                <i class="bi bi-clock-history me-1"></i> {% if request.resolver_match.url_name == 'blog_list' or request.resolver_match.url_name == 'blog_detail' %}Mon–Sat  Available{% else %}Coimbatore office open Mon–Sat{% endif %}
             </div>
 
             <!-- Right Socials -->
@@ -121,11 +176,11 @@
 
     <!-- Main Clean Navbar -->
     <nav class="navbar navbar-expand-lg vth-navbar">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-4">
 
             <!-- LEFT: Logo & Subtitle -->
             <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
-                <img src="{% static 'images/logo/logo.webp' %}?v={{ STATIC_VERSION }}" alt="Vibhu Travel Hub" class="brand-logo" width="192" height="192" style="height: 48px; width: auto;">
+                <img src="{% static 'images/logo/logo.webp' %}?v={{ STATIC_VERSION }}" alt="Vibhu Travel Hub" class="brand-logo" width="192" height="192" style="height: 38px; width: auto;">
                 <div class="brand-text">
                     <span class="brand-title fw-extrabold text-dark d-block lh-1" style="font-size: 1.25rem; letter-spacing: -0.5px;">VIBHU TRAVEL HUB</span>
                     <span class="brand-tagline text-danger fw-bold d-block text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">PREMIUM TRAVEL SERVICES</span>
@@ -171,9 +226,9 @@
                         </a>
                         <ul class="dropdown-menu border-0 shadow-lg rounded-3 py-2" aria-labelledby="servicesDropdown">
                             <li><a href="{% url 'local_cab_service' %}" class="dropdown-item py-2 px-3">Local Cab Service</a></li>
-                            <li><a href="{% url 'outstation_tours' %}" class="dropdown-item py-2 px-3">Outstation Tours</a></li>
-                            <li><a href="{% url 'tempo_traveller' %}" class="dropdown-item py-2 px-3">Tempo Traveller</a></li>
-                            <li><a href="{% url 'bus_booking' %}" class="dropdown-item py-2 px-3">Luxury Bus Rental</a></li>
+                            <li><a href="{{ outstation_menu_url }}" class="dropdown-item py-2 px-3">Outstation Tours</a></li>
+                            <li><a href="{{ tempo_menu_url }}" class="dropdown-item py-2 px-3">Tempo Traveller</a></li>
+                            <li><a href="{{ bus_menu_url }}" class="dropdown-item py-2 px-3">Luxury Bus Rental</a></li>
                             <li><a href="{% url 'pilgrimage_trips' %}" class="dropdown-item py-2 px-3">Pilgrimage Trips</a></li>
                             <li><a href="{% url 'corporate_travel' %}" class="dropdown-item py-2 px-3">Corporate Travel</a></li>
                         </ul>
@@ -208,7 +263,7 @@
 
                     <li class="nav-item ms-lg-3">
                         <a href="tel:+919655866660" class="nav-phone-banner-link" aria-label="Call +91 96558 66660">
-                            <img src="{% static 'images/phone-cta.webp' %}" alt="+91 96558 66660" class="nav-phone-banner-img" width="151" height="68">
+                            <img src="{% static 'images/phone-cta-cropped.png' %}" alt="+91 96558 66660" class="nav-phone-banner-img" width="205" height="45">
                         </a>
                     </li>
 
